@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main() {
+    int size;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    int array[size];
+    printf("Enter %d elements for the array:\n", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &array[i]);
+    }
+    printf("Duplicate values in the array: ");
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = i + 1; j < size; j++) {
+            if (array[i] == array[j]) {
+                printf("%d ", array[i]);
+                break; 
+            }
+        }
+    }
+
+    return 0;
+}
