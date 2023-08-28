@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <ctype.h>
+
+bool isValidString(const char *str) {
+    while (*str) {
+        if (!isalpha(*str)) {
+            return false;
+        }
+        str++;
+    }
+    return true;
+}
+
+int main() {
+    char input[100];  
+    printf("Enter a string: ");
+    scanf("%99s", input); 
+
+    if (isValidString(input)) {
+        printf("The string is valid and contains only alphabetic characters.\n");
+    } else {
+        printf("The string is not valid or contains non-alphabetic characters.\n");
+    }
+
+    return 0;
+}
